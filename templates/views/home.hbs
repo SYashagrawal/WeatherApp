@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  {{> header}}
+
+  <h1>Weather App</h1>
+
+  <form action="/weather" method="get">
+    <input type="text" name="city" placeholder="Enter city" required>
+    <button type="submit">Get Weather</button>
+  </form>
+
+  {{#if city}}
+    <h2>Weather in {{city}}</h2>
+    <p>Temperature: {{temp}} °C</p>
+    <p>Description: {{desc}}</p>
+  {{/if}}
+
+  {{#if error}}
+    <p style="color: red;">{{error}}</p>
+  {{/if}}
+
+  {{> footer}}
+</body>
+</html>
