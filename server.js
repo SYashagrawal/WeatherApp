@@ -5,7 +5,7 @@ const axios = require("axios");
 require("dotenv").config();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // ✅ FIXED
 
 // paths
 const viewsPath = path.join(__dirname, "templates/views");
